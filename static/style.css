@@ -1,0 +1,221 @@
+:root {
+    --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+    --panel-bg: rgba(255, 255, 255, 0.05);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --accent: #6366f1;
+    --accent-hover: #4f46e5;
+    --success: #10b981;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Outfit', sans-serif;
+    background: var(--bg-gradient);
+    min-height: 100vh;
+    color: var(--text-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.glass-container {
+    width: 90%;
+    max-width: 900px;
+    background: var(--panel-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    margin: 20px 0;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--accent);
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin: 10px 0;
+    font-weight: 800;
+}
+
+header p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+.search-box {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.search-box input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 15px 20px;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--text-primary);
+    transition: border 0.3s ease;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+.search-box button {
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 15px 30px;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.search-box button:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+/* Spinner styling */
+#loading {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.1);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 1s infinite linear;
+    margin: 0 auto 15px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Recipe card details */
+.results-container {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.source-info {
+    margin-bottom: 20px;
+}
+
+.badge {
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.ai-badge {
+    background: rgba(99, 102, 241, 0.2);
+    border: 1px solid var(--accent);
+    color: #a5b4fc;
+}
+
+.db-badge {
+    background: rgba(16, 185, 129, 0.2);
+    border: 1px solid var(--success);
+    color: #a7f3d0;
+}
+
+.recipe-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 25px;
+}
+
+.recipe-card h2 {
+    margin-top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.8rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+}
+
+.match-score {
+    font-size: 1rem;
+    background: var(--accent);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.recipe-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.col h3 {
+    margin-top: 0;
+    color: var(--accent);
+    font-size: 1.2rem;
+}
+
+ul, ol {
+    padding-left: 20px;
+    line-height: 1.6;
+}
+
+li {
+    margin-bottom: 8px;
+    color: #cbd5e1;
+}
+
+.subs-section {
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px dashed #f59e0b;
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 25px;
+}
+
+.subs-section h3 {
+    margin-top: 0;
+    color: #fbbf24;
+    font-size: 1.1rem;
+}
